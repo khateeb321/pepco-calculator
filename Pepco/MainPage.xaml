@@ -1,0 +1,303 @@
+﻿<Page
+    x:Class="Pepco.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Pepco"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    
+    <Grid >
+        
+        <!-- <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="534" Margin="62,152,0,0" VerticalAlignment="Top" Width="995">
+            <Border.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/Capture.PNG"/>
+            </Border.Background>
+        </Border> -->
+
+        <Hub x:Name="H" Header="PEPCO Electricity consumption Calculator">
+            <Hub.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/bfd63f1d226d178725f6726e1cf57fdf6.jpg"/>
+            </Hub.Background>
+            <HubSection x:Name="H1" Header="Genral Lightning">
+                <DataTemplate>
+                    <Grid Height="auto" Width="auto" Margin="28">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="0" Width="242" Text="       Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="1" Width="242" Text="       Load (Watts)"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="2" Width="242" Text="  No. of Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="3" Width="242" Text=" Avg hourly uses/day"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="4" Width="242" Text="      Units/Month"/>
+                        
+                        <TextBlock Height="36" FontSize="26" Grid.Row="1" Grid.Column="0" Width="242" Text="Lamps (Bulb)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="1" Grid.Column="1" Width="236" Text="40"/>
+                        <TextBox Name="GL1" Height="12" FontSize="18" Grid.Row="1" Grid.Column="2" Width="236" Text="" TextChanged="GL1_TextChanged" KeyDown="GL1_KeyDown"/>
+                        <TextBox Name="GL11" Height="12" FontSize="18" Grid.Row="1" Grid.Column="3" Width="236" Text="" TextChanged="GL11_TextChanged" KeyDown="GL11_KeyDown"/>
+                        <TextBox Name="GL111" Height="12" FontSize="18" Grid.Row="1" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL111_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="2" Grid.Column="0" Width="242" Text="Lamps (Bulb)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="2" Grid.Column="1" Width="236" Text="60"/>
+                        <TextBox x:Name="GL2" Height="12" FontSize="18" Grid.Row="2" Grid.Column="2" Width="236" Text="" TextChanged="GL2_TextChanged" KeyDown="GL2_KeyDown"/>
+                        <TextBox x:Name="GL22" Height="12" FontSize="18" Grid.Row="2" Grid.Column="3" Width="236" Text="" TextChanged="GL22_TextChanged" KeyDown="GL22_KeyDown"/>
+                        <TextBox x:Name="GL222" Height="12" FontSize="18" Grid.Row="2" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL222_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="3" Grid.Column="0" Width="242" Text="Lamps (Bulb)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="3" Grid.Column="1" Width="236" Text="100"/>
+                        <TextBox x:Name="GL3" Height="12" FontSize="18" Grid.Row="3" Grid.Column="2" Width="236" Text="" TextChanged="GL3_TextChanged" KeyDown="GL3_KeyDown"/>
+                        <TextBox x:Name="GL33" Height="12" FontSize="18" Grid.Row="3" Grid.Column="3" Width="236" Text="" TextChanged="GL33_TextChanged" KeyDown="GL33_KeyDown"/>
+                        <TextBox x:Name="GL333" Height="12" FontSize="18" Grid.Row="3" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL333_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="4" Grid.Column="0" Width="242" Text="Energy Saver (CFL)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="4" Grid.Column="1" Width="236" Text="14"/>
+                        <TextBox x:Name="GL4" Height="12" FontSize="18" Grid.Row="4" Grid.Column="2" Width="236" Text="" TextChanged="GL4_TextChanged" KeyDown="GL4_KeyDown"/>
+                        <TextBox x:Name="GL44" Height="12" FontSize="18" Grid.Row="4" Grid.Column="3" Width="236" Text="" TextChanged="GL44_TextChanged" KeyDown="GL44_KeyDown"/>
+                        <TextBox x:Name="GL444" Height="12" FontSize="18" Grid.Row="4" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL444_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="5" Grid.Column="0" Width="242" Text="Energy Saver (CFL)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="5" Grid.Column="1" Width="236" Text="22"/>
+                        <TextBox x:Name="GL5" Height="12" FontSize="18" Grid.Row="5" Grid.Column="2" Width="236" Text="" TextChanged="GL5_TextChanged" KeyDown="GL5_KeyDown"/>
+                        <TextBox x:Name="GL55" Height="12" FontSize="18" Grid.Row="5" Grid.Column="3" Width="236" Text="" TextChanged="GL55_TextChanged" KeyDown="GL55_KeyDown"/>
+                        <TextBox x:Name="GL555" Height="12" FontSize="18" Grid.Row="5" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL555_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="6" Grid.Column="0" Width="242" Text="Tubelights"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="6" Grid.Column="1" Width="236" Text="40"/>
+                        <TextBox x:Name="GL6" Height="12" FontSize="18" Grid.Row="6" Grid.Column="2" Width="236" Text="" TextChanged="GL6_TextChanged" KeyDown="GL6_KeyDown"/>
+                        <TextBox x:Name="GL66" Height="12" FontSize="18" Grid.Row="6" Grid.Column="3" Width="236" Text="" TextChanged="GL66_TextChanged" KeyDown="GL66_KeyDown"/>
+                        <TextBox x:Name="GL666" Height="12" FontSize="18" Grid.Row="6" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL666_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="7" Grid.Column="0" Width="242" Text="Tubelights (EC)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="7" Grid.Column="1" Width="236" Text="60"/>
+                        <TextBox x:Name="GL7" Height="12" FontSize="18" Grid.Row="7" Grid.Column="2" Width="236" Text="" TextChanged="GL7_TextChanged" KeyDown="GL7_KeyDown"/>
+                        <TextBox x:Name="GL77" Height="12" FontSize="18" Grid.Row="7" Grid.Column="3" Width="236" Text="" TextChanged="GL77_TextChanged" KeyDown="GL77_KeyDown"/>
+                        <TextBox x:Name="GL777" Height="12" FontSize="18" Grid.Row="7" Grid.Column="4" Width="236" Text="" IsReadOnly="True" Loaded="GL777_Loaded"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="Heating Appliances">
+                <DataTemplate>
+                <Grid Height="auto" Width="auto" Margin="28">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="0" Width="242" Text="       Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="1" Width="242" Text="       Load (Watts)"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="2" Width="242" Text="  No. of Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="3" Width="242" Text=" Avg hourly uses/day"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="4" Width="242" Text="      Units/Month"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="1" Grid.Column="0" Width="242" Text="Electric Iron"/>
+                        <TextBox Text="600 - 1000" Height="12" IsReadOnly="True" FontSize="18" Grid.Row="1" Grid.Column="1" Width="236"/>
+                        <TextBox x:Name="HA1" Height="12" FontSize="18" Grid.Row="1" Grid.Column="2" Width="236" Text="" TextChanged="HA1_TextChanged" KeyDown="HA1_KeyDown"/>
+                        <TextBox x:Name="HA11" Height="12" FontSize="18" Grid.Row="1" Grid.Column="3" Width="236" Text="" TextChanged="HA11_TextChanged" KeyDown="HA11_KeyDown"/>
+                        <TextBox x:Name="HA111" Height="12" FontSize="18" Grid.Row="1" Grid.Column="4" Width="236" Text="" Loaded="HA111_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="2" Grid.Column="0" Width="242" Text="Immersian Heater"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="2" Grid.Column="1" Width="236" Text="1500"/>
+                        <TextBox x:Name="HA2" Height="12" FontSize="18" Grid.Row="2" Grid.Column="2" Width="236" Text="" TextChanged="HA2_TextChanged" KeyDown="HA2_KeyDown"/>
+                        <TextBox x:Name="HA22" Height="12" FontSize="18" Grid.Row="2" Grid.Column="3" Width="236" Text="" TextChanged="HA22_TextChanged" KeyDown="HA22_KeyDown"/>
+                        <TextBox x:Name="HA222" Height="12" FontSize="18" Grid.Row="2" Grid.Column="4" Width="236" Text="" Loaded="HA222_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="3" Grid.Column="0" Width="242" Text="Water Heater"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="3" Grid.Column="1" Width="236" Text="1000 - 2000"/>
+                        <TextBox x:Name="HA3" Height="12" FontSize="18" Grid.Row="3" Grid.Column="2" Width="236" Text="" TextChanged="HA3_TextChanged" KeyDown="HA3_KeyDown"/>
+                        <TextBox x:Name="HA33" Height="12" FontSize="18" Grid.Row="3" Grid.Column="3" Width="236" Text="" TextChanged="HA33_TextChanged" KeyDown="HA33_KeyDown"/>
+                        <TextBox x:Name="HA333" Height="12" FontSize="18" Grid.Row="3" Grid.Column="4" Width="236" Text="" Loaded="HA333_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="4" Grid.Column="0" Width="242" Text="Toaster"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="4" Grid.Column="1" Width="236" Text="750"/>
+                        <TextBox x:Name="HA4" Height="12" FontSize="18" Grid.Row="4" Grid.Column="2" Width="236" Text="" TextChanged="HA4_TextChanged" KeyDown="HA4_KeyDown"/>
+                        <TextBox x:Name="HA44" Height="12" FontSize="18" Grid.Row="4" Grid.Column="3" Width="236" Text="" TextChanged="HA44_TextChanged" KeyDown="HA44_KeyDown"/>
+                        <TextBox x:Name="HA444" Height="12" FontSize="18" Grid.Row="4" Grid.Column="4" Width="236" Text="" Loaded="HA444_Loaded"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="Cooling Appliances">
+                <DataTemplate>
+                    <Grid Height="auto" Width="auto" Margin="28">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="0" Width="242" Text="       Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="1" Width="242" Text="       Load (Watts)"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="2" Width="242" Text="  No. of Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="3" Width="242" Text=" Avg hourly uses/day"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="4" Width="242" Text="      Units/Month"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="1" Grid.Column="0" Width="242" Text="Refrigerator (165 ltr)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="1" Grid.Column="1" Width="236" Text="200"/>
+                        <TextBox x:Name="CA1" Height="12" FontSize="18" Grid.Row="1" Grid.Column="2" Width="236" Text="" TextChanged="CA1_TextChanged" KeyDown="CA1_KeyDown"/>
+                        <TextBox x:Name="CA11" Height="12" FontSize="18" Grid.Row="1" Grid.Column="3" Width="236" Text="" TextChanged="CA11_TextChanged" KeyDown="CA11_KeyDown"/>
+                        <TextBox x:Name="CA111" Height="12" FontSize="18" Grid.Row="1" Grid.Column="4" Width="236" Text="" Loaded="CA111_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="2" Grid.Column="0" Width="242" Text="AC Window(1.5 ton)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="2" Grid.Column="1" Width="236" Text="1500 - 2000"/>
+                        <TextBox x:Name="CA2" Height="12" FontSize="18" Grid.Row="2" Grid.Column="2" Width="236" Text="" TextChanged="CA2_TextChanged" KeyDown="CA2_KeyDown"/>
+                        <TextBox x:Name="CA22" Height="12" FontSize="18" Grid.Row="2" Grid.Column="3" Width="236" Text="" TextChanged="CA22_TextChanged" KeyDown="CA22_KeyDown"/>
+                        <TextBox x:Name="CA222" Height="12" FontSize="18" Grid.Row="2" Grid.Column="4" Width="236" Text="" Loaded="CA222_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="3" Grid.Column="0" Width="242" Text="AC Split (1.5 ton)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="3" Grid.Column="1" Width="236" Text="1200 - 1800"/>
+                        <TextBox x:Name="CA3" Height="12" FontSize="18" Grid.Row="3" Grid.Column="2" Width="236" Text="" TextChanged="CA3_TextChanged" KeyDown="CA3_KeyDown"/>
+                        <TextBox x:Name="CA33" Height="12" FontSize="18" Grid.Row="3" Grid.Column="3" Width="236" Text="" TextChanged="CA33_TextChanged" KeyDown="CA33_KeyDown" />
+                        <TextBox x:Name="CA333" Height="12" FontSize="18" Grid.Row="3" Grid.Column="4" Width="236" Text="" Loaded="CA333_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="4" Grid.Column="0" Width="242" Text="Desert cooler"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="4" Grid.Column="1" Width="236" Text="200"/>
+                        <TextBox x:Name="CA4" Height="12" FontSize="18" Grid.Row="4" Grid.Column="2" Width="236" Text="" TextChanged="CA4_TextChanged" KeyDown="CA4_KeyDown"/>
+                        <TextBox x:Name="CA44" Height="12" FontSize="18" Grid.Row="4" Grid.Column="3" Width="236" Text="" TextChanged="CA44_TextChanged" KeyDown="CA44_KeyDown"/>
+                        <TextBox x:Name="CA444" Height="12" FontSize="18" Grid.Row="4" Grid.Column="4" Width="236" Text="" Loaded="CA444_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="5" Grid.Column="0" Width="242" Text="Room Cooler"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="5" Grid.Column="1" Width="236" Text="60 - 200"/>
+                        <TextBox x:Name="CA5" Height="12" FontSize="18" Grid.Row="5" Grid.Column="2" Width="236" Text="" TextChanged="CA5_TextChanged" KeyDown="CA5_KeyDown" />
+                        <TextBox x:Name="CA55" Height="12" FontSize="18" Grid.Row="5" Grid.Column="3" Width="236" Text="" TextChanged="CA55_TextChanged" KeyDown="CA55_KeyDown"/>
+                        <TextBox x:Name="CA555" Height="12" FontSize="18" Grid.Row="5" Grid.Column="4" Width="236" Text="" Loaded="CA555_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="6" Grid.Column="0" Width="242" Text="Table Fan"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="6" Grid.Column="1" Width="236" Text="60 - 100"/>
+                        <TextBox x:Name="CA6" Height="12" FontSize="18" Grid.Row="6" Grid.Column="2" Width="236" Text="" TextChanged="CA6_TextChanged" KeyDown="CA6_KeyDown"/>
+                        <TextBox x:Name="CA66" Height="12" FontSize="18" Grid.Row="6" Grid.Column="3" Width="236" Text="" TextChanged="CA66_TextChanged" KeyDown="CA66_KeyDown"/>
+                        <TextBox x:Name="CA666" Height="12" FontSize="18" Grid.Row="6" Grid.Column="4" Width="236" Text="" Loaded="CA666_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="7" Grid.Column="0" Width="242" Text="Exhaust Fan"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="7" Grid.Column="1" Width="236" Text="150"/>
+                        <TextBox x:Name="CA7" Height="12" FontSize="18" Grid.Row="7" Grid.Column="2" Width="236" Text="" TextChanged="CA7_TextChanged" KeyDown="CA7_KeyDown"/>
+                        <TextBox x:Name="CA77" Height="12" FontSize="18" Grid.Row="7" Grid.Column="3" Width="236" Text="" TextChanged="CA77_TextChanged" KeyDown="CA77_KeyDown"/>
+                        <TextBox x:Name="CA777" Height="12" FontSize="18" Grid.Row="7" Grid.Column="4" Width="236" Text="" Loaded="CA777_Loaded"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection Header="Other Items">
+                <DataTemplate>
+                    <Grid Height="auto" Width="auto" Margin="28">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="0" Width="242" Text="       Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="1" Width="242" Text="       Load (Watts)"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="2" Width="242" Text="  No. of Appliances"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="3" Width="242" Text=" Avg hourly uses/day"/>
+                        <TextBlock Margin="6" Foreground="Red" Height="36" FontSize="26" Grid.Row="0" Grid.Column="4" Width="242" Text="      Units/Month"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="1" Grid.Column="0" Width="242" Text="Washing machine"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="1" Grid.Column="1" Width="236" Text="700"/>
+                        <TextBox x:Name="OI1" Height="12" FontSize="18" Grid.Row="1" Grid.Column="2" Width="236" Text="" TextChanged="OI1_TextChanged" KeyDown="OI1_KeyDown"/>
+                        <TextBox x:Name="OI11" Height="12" FontSize="18" Grid.Row="1" Grid.Column="3" Width="236" Text="" TextChanged="OI11_TextChanged" KeyDown="OI11_KeyDown"/>
+                        <TextBox x:Name="OI111" Height="12" FontSize="18" Grid.Row="1" Grid.Column="4" Width="236" Text="" Loaded="OI111_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="2" Grid.Column="0" Width="242" Text="DVD Player"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="2" Grid.Column="1" Width="236" Text="40"/>
+                        <TextBox x:Name="OI2" Height="12" FontSize="18" Grid.Row="2" Grid.Column="2" Width="236" Text="" TextChanged="OI2_TextChanged" KeyDown="OI2_KeyDown"/>
+                        <TextBox x:Name="OI22" Height="12" FontSize="18" Grid.Row="2" Grid.Column="3" Width="236" Text="" TextChanged="OI22_TextChanged" KeyDown="OI22_KeyDown"/>
+                        <TextBox x:Name="OI222" Height="12" FontSize="18" Grid.Row="2" Grid.Column="4" Width="236" Text="" Loaded="OI222_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="3" Grid.Column="0" Width="242" Text="Television"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="3" Grid.Column="1" Width="236" Text="200"/>
+                        <TextBox x:Name="OI3" Height="12" FontSize="18" Grid.Row="3" Grid.Column="2" Width="236" Text="" TextChanged="OI3_TextChanged" KeyDown="OI3_KeyDown"/>
+                        <TextBox x:Name="OI33" Height="12" FontSize="18" Grid.Row="3" Grid.Column="3" Width="236" Text="" TextChanged="OI33_TextChanged" KeyDown="OI33_KeyDown"/>
+                        <TextBox x:Name="OI333" Height="12" FontSize="18" Grid.Row="3" Grid.Column="4" Width="236" Text="" Loaded="OI333_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="4" Grid.Column="0" Width="242" Text="Mixer-cum-grinder"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="4" Grid.Column="1" Width="236" Text="200"/>
+                        <TextBox x:Name="OI4" Height="12" FontSize="18" Grid.Row="4" Grid.Column="2" Width="236" Text="" TextChanged="OI4_TextChanged" KeyDown="OI4_KeyDown"/>
+                        <TextBox x:Name="OI44" Height="12" FontSize="18" Grid.Row="4" Grid.Column="3" Width="236" Text="" TextChanged="OI44_TextChanged" KeyDown="OI44_KeyDown"/>
+                        <TextBox x:Name="OI444" Height="12" FontSize="18" Grid.Row="4" Grid.Column="4" Width="236" Text="" Loaded="OI444_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="5" Grid.Column="0" Width="242" Text="Computer"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="5" Grid.Column="1" Width="236" Text="200"/>
+                        <TextBox x:Name="OI5" Height="12" FontSize="18" Grid.Row="5" Grid.Column="2" Width="236" Text="" TextChanged="OI5_TextChanged" KeyDown="OI5_KeyDown"/>
+                        <TextBox x:Name="OI55" Height="12" FontSize="18" Grid.Row="5" Grid.Column="3" Width="236" Text="" TextChanged="OI55_TextChanged" KeyDown="OI55_KeyDown"/>
+                        <TextBox x:Name="OI555" Height="12" FontSize="18" Grid.Row="5" Grid.Column="4" Width="236" Text="" Loaded="OI555_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="6" Grid.Column="0" Width="242" Text="Pump motor (0.5 HP)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="6" Grid.Column="1" Width="236" Text="370"/>
+                        <TextBox x:Name="OI6" Height="12" FontSize="18" Grid.Row="6" Grid.Column="2" Width="236" Text="" TextChanged="OI6_TextChanged" KeyDown="OI6_KeyDown"/>
+                        <TextBox x:Name="OI66" Height="12" FontSize="18" Grid.Row="6" Grid.Column="3" Width="236" Text="" TextChanged="OI66_TextChanged" KeyDown="OI66_KeyDown"/>
+                        <TextBox x:Name="OI666" Height="12" FontSize="18" Grid.Row="6" Grid.Column="4" Width="236" Text="" Loaded="OI666_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="7" Grid.Column="0" Width="242" Text="Pump motor (1 HP)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="7" Grid.Column="1" Width="236" Text="740"/>
+                        <TextBox x:Name="OI7" Height="12" FontSize="18" Grid.Row="7" Grid.Column="2" Width="236" Text="" TextChanged="OI7_TextChanged" KeyDown="OI7_KeyDown"/>
+                        <TextBox x:Name="OI77" Height="12" FontSize="18" Grid.Row="7" Grid.Column="3" Width="236" Text="" TextChanged="OI77_TextChanged" KeyDown="OI77_KeyDown"/>
+                        <TextBox x:Name="OI777" Height="12" FontSize="18" Grid.Row="7" Grid.Column="4" Width="236" Text="" Loaded="OI777_Loaded"/>
+
+                        <TextBlock Height="36" FontSize="26" Grid.Row="8" Grid.Column="0" Width="242" Text="Pump motor (1.5 HP)"/>
+                        <TextBox Height="12" IsReadOnly="True" FontSize="18" Grid.Row="8" Grid.Column="1" Width="236" Text="1110"/>
+                        <TextBox x:Name="OI8" Height="12" FontSize="18" Grid.Row="8" Grid.Column="2" Width="236" Text="" TextChanged="OI8_TextChanged" KeyDown="OI8_KeyDown"/>
+                        <TextBox x:Name="OI88" Height="12" FontSize="18" Grid.Row="8" Grid.Column="3" Width="236" Text="" TextChanged="OI88_TextChanged" KeyDown="OI88_KeyDown"/>
+                        <TextBox x:Name="OI888" Height="12" FontSize="18" Grid.Row="8" Grid.Column="4" Width="236" Text="" Loaded="OI888_Loaded"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+        <TextBox x:Name="total" HorizontalAlignment="Left" Margin="690,624,0,0" FontSize="20" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="188"/>
+        <TextBlock HorizontalAlignment="Left" Margin="357,634,0,0" TextWrapping="Wrap" FontSize="24" Text="Total Monthly Consumption" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Page>
